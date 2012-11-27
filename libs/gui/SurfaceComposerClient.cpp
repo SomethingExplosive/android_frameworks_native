@@ -589,7 +589,7 @@ ScreenshotClient::ScreenshotClient()
     : mWidth(0), mHeight(0), mFormat(PIXEL_FORMAT_NONE) {
 }
 
-#ifdef TARGET_TOROPLUS_RADIO_FIX
+#ifdef TOROPLUS_RADIO_FIX
 status_t ScreenshotClient::update() {
     sp<ISurfaceComposer> s(ComposerService::getComposerService());
     if (s == NULL) return NO_INIT;
