@@ -631,7 +631,7 @@ ScreenshotClient::~ScreenshotClient() {
     ScreenshotClient::release();
 }
 
-#ifdef TOROPLUS_RADIO_FIX
+#ifdef TARGET_TOROPLUS_RADIO_FIX
 status_t ScreenshotClient::update() {
     sp<ISurfaceComposer> s(ComposerService::getComposerService());
     if (s == NULL) return NO_INIT;
