@@ -631,17 +631,6 @@ ScreenshotClient::~ScreenshotClient() {
     ScreenshotClient::release();
 }
 
-#ifdef TARGET_TOROPLUS_RADIO_FIX
-status_t ScreenshotClient::update() {
-    sp<ISurfaceComposer> s(ComposerService::getComposerService());
-    if (s == NULL) return NO_INIT;
-    mHeap = 0;
-    return s->captureScreen(0, &mHeap,
-            &mWidth, &mHeight, &mFormat, 0, 0,
-            0, -1UL);
-}
-#endif
-
 sp<CpuConsumer> ScreenshotClient::getCpuConsumer() const {
     if (mCpuConsumer == NULL) {
         mCpuConsumer = new CpuConsumer(1);
